@@ -1,6 +1,6 @@
 # Food n Flix
 
-An app created to help alleviate the need for indecision surrounding what movie to pick and what food to order in for a special evening with friends or family.
+An app created to help alleviate the need for indecision surrounding what movie to pick and what food to order in for a special evening with friends or family at home.
 
 Created as the second group project for the First Cohort of the University of Minnesota's Coding Bootcamp.
 
