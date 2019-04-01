@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center"><i class="fa fa-heart"></i> Date-Night In <i class="fa fa-heart"></i></h1>
+            <hr>
+            <h2 id="jumbo_h2" class="text-center">Complete the survey for a fun date-night!</h2>
+            <br>
+
+            <div class="text-center">
+                <a href="home.html"><button type="button" class="btn btn-lg btn-primary"><span
+                            class="glyphicon glyphicon-home"></span> Home</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Friends Page -->
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Date-Night In<strong></h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <form role="form">
+
+                            <h3>Your Zipcode (Required)</h3>
+                            <input type="text" name="" id="zipcode" class="form-control" required>
+
+                            <h3><strong>Survey Questions</strong></h3>
+                            <hr>
+
+                            <h3>Would you rather watch the sunset or hit the shooting range?</h3>
+                            <select data-placeholder="" class="chosen-select" id="q1">
+                                <option selected="selected" value="sunset">Watch the Sunset</option>
+                                <option value="shootingrange">The Shooting Range</option>
+                            </select>
+
+
+                            <h3>You are throwing a party for the holidays, what food would you serve?</h3>
+                            <select data-placeholder="" class="chosen-select" id="q2">
+                                <option selected="selected" value="meat">Meat!</option>
+                                <option value="fruit">Fruit!</option>
+                                <option value="saladandveggies">Salad and Veggies!</option>
+                            </select>
+
+
+                            <h3>If you could be any where in the world where would you be?</h3>
+                            <select data-placeholder="" class="chosen-select" id="q3">
+                                <option selected="selected" value="paris">Paris</option>
+                                <option value="london">London</option>
+                                <option value="amazon">The Amazon Jungle</option>
+                                <option value="everest">Mt. Everest</option>
+                            </select>
+
+
+                            <h3>You don’t need a silver fork to eat good food!</h3>
+                            <select data-placeholder="" class="chosen-select" id="q4">
+                                <option selected="selected" value="yes">True</option>
+                                <option value="no">Wrong! Utensils are created for a reason!</option>
+                            </select>
+
+
+                            <h3>If your life was a movie how would it play out?</h3>
+                            <select data-placeholder="" class="chosen-select" id="q5">
+                                <option selected="selected" value="action">Action since birth!</option>
+                                <option value="comedy">Laughing ever since my eyes just opened!</option>
+                                <option value="soap">Dramatic and full of plot-twists!</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="resultsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h2 class="modal-title"><strong>A Date-Night In for You</strong></h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>
+                        <img id="matchImg" src="" alt="" height="350" width="350">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/"><button type="button" class="btn btn-lg btn-primary"><span
+                                    class="glyphicon glyphicon-home"></span> Close</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://use.fontawesome.com/0bf9ac1b8c.js"></script>
+
+    <!-- jQuery Reference -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script>
+        // Grab the URL of the website
+        var currentURL = window.location.origin;
+        // Capture the form inputs
+        $("#submit").on("click", function () {
+            //event.preventDefault();
+
+            if (($('#name').val().trim() !== "") && ($('#photo').val().trim() !== "")) {
+                // Create an object for the user's data
+                var userData = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+                }
+
+
+                // AJAX post the data to the friends API.
+                $.post(currentURL + "/api/friends", userData, function (data) {
+
+                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                    $("#matchName").text(data.name);
+                    $('#matchImg').attr("src", data.photo);
+                    $("#matchDesp").text(data.desp)
+
+                    // Show the modal with the best match
+                    $("#resultsModal").modal('toggle');
+                    // clear the input fields in the form
+                    $("#name").val("");
+                    $("#photo").val("");
+
+                });
+            } else {
+                $(".modal-title").text("Missing required information");
+                $(".modal-body").html("<h3>Please complete the form before submitting</h3>");
+                $("#resultsModal").modal('toggle');
+
+            }
+            return false;
+        });
+
+        // modal logic
+        $('#closeModal').click(function () {
+            $.get('/', function (req, res) {
+                location.replace(res);
+            })
+        });
+
+    </script>
+
+</body>
+
+</html>
