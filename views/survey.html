@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey Page</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 
@@ -20,13 +18,13 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center"><i class="fa fa-heart"></i> Date-Night In <i class="fa fa-heart"></i></h1>
+            <h1 class="text-center"> Food n Flix Night</h1>
             <hr>
-            <h2 id="jumbo_h2" class="text-center">Complete the survey for a fun date-night!</h2>
+            <h2 id="jumbo_h2" class="text-center">Complete the survey to find a great night in!</h2>
             <br>
 
             <div class="text-center">
-                <a href="home.html"><button type="button" class="btn btn-lg btn-primary"><span
+                <a href="/"><button type="button" class="btn btn-lg btn-primary"><span
                             class="glyphicon glyphicon-home"></span> Home</button></a>
             </div>
         </div>
@@ -37,12 +35,13 @@
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Date-Night In<strong></h3>
+                        <h3 class="panel-title"><strong>Survery<strong></h3>
                     </div>
 
                     <div class="panel-body">
                         <form role="form">
 
+                            <h3><strong>A Little About Who You Are</strong></h3>
                             <h3>Your Zipcode (Required)</h3>
                             <input type="text" name="" id="zipcode" class="form-control" required>
 
@@ -51,8 +50,9 @@
 
                             <h3>Would you rather watch the sunset or hit the shooting range?</h3>
                             <select data-placeholder="" class="chosen-select" id="q1">
+                                <option value=""></option>
                                 <option selected="selected" value="sunset">Watch the Sunset</option>
-                                <option value="shootingrange">The Shooting Range</option>
+                                <option value="shooting">The Shooting Range</option>
                             </select>
 
 
@@ -79,13 +79,13 @@
                                 <option value="no">Wrong! Utensils are created for a reason!</option>
                             </select>
 
-
                             <h3>If your life was a movie how would it play out?</h3>
                             <select data-placeholder="" class="chosen-select" id="q5">
                                 <option selected="selected" value="action">Action since birth!</option>
                                 <option value="comedy">Laughing ever since my eyes just opened!</option>
                                 <option value="soap">Dramatic and full of plot-twists!</option>
                             </select>
+                           
 
                             <br>
                             <br>
@@ -106,11 +106,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">X</button>
-                        <h2 class="modal-title"><strong>A Date-Night In for You</strong></h2>
+                        <h2 class="modal-title"><strong>Your most compatible friend</strong></h2>
                     </div>
                     <div class="modal-body">
                         <h2 id="matchName"></h2>
-                        <img id="matchImg" src="" alt="" height="350" width="350">
                     </div>
                     <div class="modal-footer">
                         <a href="/"><button type="button" class="btn btn-lg btn-primary"><span
@@ -140,10 +139,10 @@
         $("#submit").on("click", function () {
             //event.preventDefault();
 
-            if (($('#name').val().trim() !== "") && ($('#photo').val().trim() !== "")) {
+            if (($('#zipcode').val().trim() !== "") && ($('#photo').val().trim() !== "")) {
                 // Create an object for the user's data
                 var userData = {
-                    name: $("#name").val(),
+                    name: $("#zipcode").val(),
                     photo: $("#photo").val(),
                     scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
                 }
@@ -160,7 +159,7 @@
                     // Show the modal with the best match
                     $("#resultsModal").modal('toggle');
                     // clear the input fields in the form
-                    $("#name").val("");
+                    $("#zipcode").val("");
                     $("#photo").val("");
 
                 });
