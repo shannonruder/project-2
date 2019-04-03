@@ -15,6 +15,16 @@ body, html {
     margin: 0;
 }
 
+#survey-container {
+    background-color: black;
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 @media screen and (max-width: 720px) {
     #main-container {
         background-image: url("../images/background.jpg");
