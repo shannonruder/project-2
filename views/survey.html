@@ -17,28 +17,33 @@
 
 <body id="surveybody">
 
-    <div class="container">
+    <div class="container survey">
 
         <div class="row">
             <div class="col-lg-12">
 
                 <div class="panel panel-default">
                     <br>
-                    <h3 class="text-center">Complete the survey for a great night in!</h3>
+                    <h3 class="text-center">What are you in the mood for?</h3>
 
-                    <br>
                     <div class="panel-body">
                         <form role="form">
+                            <h6>Make Up a Name for Your Night (Required)</h6>
+                            <input type="text" placeholder="Ex: Hot-n-Steamy" style="width:300px; height:25px" name="" id="zipcode"
+                                class="form-control" required>
+                            <br>
 
                             <h6>Your Zipcode (Required)</h6>
-                            <input type="text" style="width:100px; height:30px" name="" id="zipcode"
+                            <input type="text" style="width:100px; height:25px" name="" id="zipcode"
                                 class="form-control" required>
                             <br>
                             <h6>Would you rather watch the sunset or hit the shooting range?</h6>
                             <select data-placeholder="" class="chosen-select" id="q1">
                                 <option selected="selected" value="">Choose answer...</option>
-                                <option value="sunset">Watch the Sunset</option>
-                                <option value="shooting">The Shooting Range</option>
+                                <option value="1">Watch the Sunset.</option>
+                                <option value="2">Go to the Shooting Range.</option>
+                                <option value="3">Too Boring! Laugh hysterically is more my style.</option>
+
                             </select>
                             <br><br>
 
@@ -76,7 +81,7 @@
                                 <option value="comedy">Laughing ever since my eyes just opened!</option>
                                 <option value="soap">Dramatic and full of plot-twists!</option>
                             </select>
-                            <br><br>
+                            <br>
 
                             <button type="submit" id="surveysubmit">Submit</button>
                         </form>
@@ -120,7 +125,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script>
+        
+    <!-- <script>
         // Grab the URL of the website
         var currentURL = window.location.origin;
         // Capture the form inputs
@@ -167,7 +173,7 @@
             })
         });
 
-    </script>
+    </script> -->
 
 </body>
 
