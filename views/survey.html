@@ -12,35 +12,29 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/style.css">
+
 </head>
 
-<body>
+<body id="surveybody">
 
-    <div id="survey-container">
-
-        <div class="jumbotron">
-            <h1 class="text-center">Food n Flix Night</h1>
-            <h2 id="jumbo_h2" class="text-center">Complete the survey for great night in!</h2>
-            <br>
-        </div>
+    <div class="container">
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-default">
 
+                <div class="panel panel-default">
+                    <br>
+                    <h3 class="text-center">Complete the survey for a great night in!</h3>
+
+                    <br>
                     <div class="panel-body">
                         <form role="form">
 
-                            <h4>Your Zipcode (Required)</h4>
-                            <input type="text" name="" id="zipcode" class="form-control" required>
-
+                            <h6>Your Zipcode (Required)</h6>
+                            <input type="text" style="width:100px; height:30px" name="" id="zipcode"
+                                class="form-control" required>
                             <br>
-                            <br>
-
-                            <h4><strong>Survey Questions</strong></h4>
-
-
-                            <h5>Would you rather watch the sunset or hit the shooting range?</h5>
+                            <h6>Would you rather watch the sunset or hit the shooting range?</h6>
                             <select data-placeholder="" class="chosen-select" id="q1">
                                 <option selected="selected" value="">Choose answer...</option>
                                 <option value="sunset">Watch the Sunset</option>
@@ -48,7 +42,7 @@
                             </select>
                             <br><br>
 
-                            <h5>You are throwing a party for the holidays, what food would you serve?</h5>
+                            <h6>You are throwing a party for the holidays, what food would you serve?</h6>
                             <select data-placeholder="" class="chosen-select" id="q2">
                                 <option selected="selected" value="">Choose answer...</option>
                                 <option value="meat">Meat!</option>
@@ -57,7 +51,7 @@
                             </select>
                             <br><br>
 
-                            <h5>If you could be any where in the world where would you be?</h5>
+                            <h6>If you could be any where in the world where would you be?</h6>
                             <select data-placeholder="" class="chosen-select" id="q3">
                                 <option selected="selected" value="">Choose answer...</option>
                                 <option value="paris">Paris</option>
@@ -67,7 +61,7 @@
                             </select>
                             <br><br>
 
-                            <h5>You don’t need a silver fork to eat good food!</h5>
+                            <h6>You don’t need a silver fork to eat good food!</h6>
                             <select data-placeholder="" class="chosen-select" id="q4">
                                 <option selected="selected" value="">Choose answer...</option>
                                 <option value="yes">True</option>
@@ -75,19 +69,16 @@
                             </select>
                             <br><br>
 
-                            <h5>If your life was a movie how would it play out?</h5>
+                            <h6>If your life was a movie how would it play out?</h6>
                             <select data-placeholder="" class="chosen-select" id="q5">
                                 <option selected="selected" value="">Choose answer...</option>
                                 <option value="action">Action since birth!</option>
                                 <option value="comedy">Laughing ever since my eyes just opened!</option>
                                 <option value="soap">Dramatic and full of plot-twists!</option>
                             </select>
+                            <br><br>
 
-
-                            <br>
-                            <br>
-
-                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="surveysubmit">Submit</button>
                         </form>
                     </div>
 

@@ -15,16 +15,6 @@ body, html {
     margin: 0;
 }
 
-#survey-container {
-    background-color: black;
-    height: 100%;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
 @media screen and (max-width: 720px) {
     #main-container {
         background-image: url("../images/background.jpg");
@@ -48,6 +38,8 @@ body, html {
     }
 }
 
+/* Home Page */
+
 .caption {
     background-color: white;
     opacity: 0.7;
@@ -61,11 +53,13 @@ body, html {
 
 .caption:hover {
     opacity: 1;
+    border: 2px;
+    border-style: double;
 }
 
 @media screen and (max-width: 361px) {
     span {
-        width: 100%; 
+        width: 100%;
         font-family: 'Montserrat', sans-serif;
         font-weight: lighter;
         color: #22171F;
@@ -122,4 +116,28 @@ button:hover {
 
 #cancelbtn:hover {
     background-color: #37401E;
+}
+
+/* Survey Page */
+
+#surveybody {
+    background-image: url("../images/surveybg.jpg");
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 50%;
+    background-color: white;
+    opacity: 0.65;
+    color: black
+}
+
+.container:hover {
+    opacity: 1;
 }
