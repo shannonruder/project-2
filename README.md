@@ -2,7 +2,6 @@
 
 An app created to help alleviate the need for indecision surrounding what movie to pick and what food to order in for a special evening with friends or family at home.
 
-Created as the second group project for the First Cohort of the University of Minnesota's Coding Bootcamp.
 
 <p>So many movie options, so many food options out there with so little time to sift through the choices! We all lead hectic lives. FoodnFlix is an event planner app that provides users with a shortcut to pairing a movie with a nearby restaurant. We do this by getting to know our users and their preferences. We want to make this data available to as many people as possible so they will be able to enjoy these perks as well.</p>
 
