@@ -3,89 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Survey Page</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="../public/styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/style.css">
 
 </head>
 
-<body>
+<body id="surveybody">
 
-    <div class="container">
+    <div class="container survey">
 
-        <div class="jumbotron">
-            <h1 class="text-center"> Food n Flix Night</h1>
-            <hr>
-            <h2 id="jumbo_h2" class="text-center">Complete the survey to find a great night in!</h2>
-            <br>
-        </div>
-        
         <div class="row">
             <div class="col-lg-12">
 
-                <!-- Friends Page -->
                 <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Survery<strong></h3>
-                    </div>
+                    <br>
+                    <h3 class="text-center">What are you in the mood for?</h3>
 
                     <div class="panel-body">
                         <form role="form">
+                            <h6>Make Up a Name for Your Night (Required)</h6>
+                            <input type="text" placeholder="Ex: Hot-n-Steamy" style="width:300px; height:25px" name="" id="zipcode"
+                                class="form-control" required>
+                            <br>
 
-                            <h3>Your Zipcode (Required)</h3>
-                            <input type="text" name="" id="zipcode" class="form-control" required>
-
-                            <h3><strong>Survey Questions</strong></h3>
-                            <hr>
-
-                            <h3>Would you rather watch the sunset or hit the shooting range?</h3>
+                            <h6>Your Zipcode (Required)</h6>
+                            <input type="text" style="width:100px; height:25px" name="" id="zipcode"
+                                class="form-control" required>
+                            <br>
+                            <h6>Would you rather watch the sunset or hit the shooting range?</h6>
                             <select data-placeholder="" class="chosen-select" id="q1">
-                                <option value=""></option>
-                                <option selected="selected" value="sunset">Watch the Sunset</option>
-                                <option value="shooting">The Shooting Range</option>
+                                <option selected="selected" value="">Choose answer...</option>
+                                <option value="1">Watch the Sunset.</option>
+                                <option value="2">Go to the Shooting Range.</option>
+                                <option value="3">Too Boring! Laugh hysterically is more my style.</option>
+
                             </select>
+                            <br><br>
 
-
-                            <h3>You are throwing a party for the holidays, what food would you serve?</h3>
+                            <h6>You are throwing a party for the holidays, what food would you serve?</h6>
                             <select data-placeholder="" class="chosen-select" id="q2">
-                                <option selected="selected" value="meat">Meat!</option>
+                                <option selected="selected" value="">Choose answer...</option>
+                                <option value="meat">Meat!</option>
                                 <option value="fruit">Fruit!</option>
                                 <option value="saladandveggies">Salad and Veggies!</option>
                             </select>
+                            <br><br>
 
-
-                            <h3>If you could be any where in the world where would you be?</h3>
+                            <h6>If you could be any where in the world where would you be?</h6>
                             <select data-placeholder="" class="chosen-select" id="q3">
-                                <option selected="selected" value="paris">Paris</option>
+                                <option selected="selected" value="">Choose answer...</option>
+                                <option value="paris">Paris</option>
                                 <option value="london">London</option>
                                 <option value="amazon">The Amazon Jungle</option>
                                 <option value="everest">Mt. Everest</option>
                             </select>
+                            <br><br>
 
-
-                            <h3>You don’t need a silver fork to eat good food!</h3>
+                            <h6>You don’t need a silver fork to eat good food!</h6>
                             <select data-placeholder="" class="chosen-select" id="q4">
-                                <option selected="selected" value="yes">True</option>
+                                <option selected="selected" value="">Choose answer...</option>
+                                <option value="yes">True</option>
                                 <option value="no">Wrong! Utensils are created for a reason!</option>
                             </select>
+                            <br><br>
 
-                            <h3>If your life was a movie how would it play out?</h3>
+                            <h6>If your life was a movie how would it play out?</h6>
                             <select data-placeholder="" class="chosen-select" id="q5">
-                                <option selected="selected" value="action">Action since birth!</option>
+                                <option selected="selected" value="">Choose answer...</option>
+                                <option value="action">Action since birth!</option>
                                 <option value="comedy">Laughing ever since my eyes just opened!</option>
                                 <option value="soap">Dramatic and full of plot-twists!</option>
                             </select>
-                           
-
-                            <br>
                             <br>
 
-                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="surveysubmit">Submit</button>
                         </form>
                     </div>
 
@@ -127,7 +125,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script>
+        
+    <!-- <script>
         // Grab the URL of the website
         var currentURL = window.location.origin;
         // Capture the form inputs
@@ -174,7 +173,7 @@
             })
         });
 
-    </script>
+    </script> -->
 
 </body>
 
