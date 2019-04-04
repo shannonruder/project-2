@@ -25,3 +25,9 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+
+//dylan's work
+
+// app.get("/", function(req, res) {
+//res.sendFile(path.join(__dirname, "/../views/survey.html"));
+//});

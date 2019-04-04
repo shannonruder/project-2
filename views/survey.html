@@ -126,7 +126,33 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
         
-    <!-- <script>
+    
+    <!--Dylan's work--script>
+        // Grab the URL of the website
+        // var currentURL = window.location.origin;
+        // Capture the form inputs
+    
+        $("#surveysubmit").on("click", function () {
+            //event.preventDefault();
+
+            var userLocation = $("#zipcode").val().trim();
+            // console.log(userLocation);
+            $.ajax({
+                url: "/api/yelp",
+                method: "POST",
+                data: {"userLocation": userLocation}
+            }).then(function(response) {
+                var newDiv = $("<div id='newDiv'>");
+
+                newDiv.append(response);
+                $(".container").append(newDiv); 
+                
+    
+    })
+     });
+    
+    
+        <!-- <script>
         // Grab the URL of the website
         var currentURL = window.location.origin;
         // Capture the form inputs
