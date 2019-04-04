@@ -131,13 +131,36 @@ button:hover {
     background-size: 100% 100%;
 }
 
-.container {
+.survey {
     width: 50%;
     background-color: white;
     opacity: 0.65;
     color: black
 }
 
-.container:hover {
+.survey:hover {
     opacity: 1;
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/surveybg.jpg");
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+
+.col-lg-3{
+    background-color:white;
+}
+
+.col-lg-6 {
+
+    background-color:white;
 }
