@@ -22,10 +22,17 @@ module.exports = function(app) {
   // app.get("*", function(req, res) {
   //   res.render("404");
   // });
+
+  //dylan's work
+
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "/../views/survey.html"));
+    });
+// end dylans
+
 };
 
-//dylan's work
 
-// app.get("/", function(req, res) {
-//res.sendFile(path.join(__dirname, "/../views/survey.html"));
-//});
+
+
+

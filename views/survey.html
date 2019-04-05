@@ -27,9 +27,9 @@
                     <h3 class="text-center">What are you in the mood for?</h3>
 
                     <div class="panel-body">
-                        <form method="POST" action="/api/survey">
+                        <form>
                             <h6>Make Up a Name for Your Night (Required)</h6>
-                            <input type="text" placeholder="Ex: Hot-n-Steamy" style="width:300px; height:25px" name="" id="zipcode"
+                            <input type="text" placeholder="Ex: Hot-n-Steamy" style="width:300px; height:25px" name="" id="nameEvent"
                                 class="form-control" required>
                             <br>
 
@@ -126,78 +126,19 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
         
-    
-    <!--Dylan's work--script>
-        // Grab the URL of the website
+        
+
+        <!-- // Grab the URL of the website
         // var currentURL = window.location.origin;
-        // Capture the form inputs
-    
-        $("#surveysubmit").on("click", function () {
-            //event.preventDefault();
-
-            var userLocation = $("#zipcode").val().trim();
-            // console.log(userLocation);
-            $.ajax({
-                url: "/api/yelp",
-                method: "POST",
-                data: {"userLocation": userLocation}
-            }).then(function(response) {
-                var newDiv = $("<div id='newDiv'>");
-
-                newDiv.append(response);
-                $(".container").append(newDiv); 
-                
-    
-    })
-     });
-    
-    
-        <!-- <script>
-        // Grab the URL of the website
-        var currentURL = window.location.origin;
-        // Capture the form inputs
-        $("#submit").on("click", function () {
-            //event.preventDefault();
-
-            if (($('#zipcode').val().trim() !== "") && ($('#photo').val().trim() !== "")) {
-                // Create an object for the user's data
-                var userData = {
-                    name: $("#zipcode").val(),
-                    photo: $("#photo").val(),
-                    scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
-                }
-
-
-                // AJAX post the data to the friends API.
-                $.post(currentURL + "/api/friends", userData, function (data) {
-
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#matchName").text(data.name);
-                    $('#matchImg').attr("src", data.photo);
-                    $("#matchDesp").text(data.desp)
-
-                    // Show the modal with the best match
-                    $("#resultsModal").modal('toggle');
-                    // clear the input fields in the form
-                    $("#zipcode").val("");
-                    $("#photo").val("");
-
-                });
-            } else {
-                $(".modal-title").text("Missing required information");
-                $(".modal-body").html("<h3>Please complete the form before submitting</h3>");
-                $("#resultsModal").modal('toggle');
-
-            }
-            return false;
-        });
-
-        // modal logic
-        $('#closeModal').click(function () {
-            $.get('/', function (req, res) {
-                location.replace(res);
-            })
-        });
+        // Capture the form inputs -->
+        <script>
+            $("#surveysubmit").on("click", function () {
+                event.preventDefault();
+                var userLocation = $("#zipcode").val().trim();
+                $(location).attr('href', `/api/result/${userLocation}`)
+            });
+        </script>
+ 
 
     </script> -->
 

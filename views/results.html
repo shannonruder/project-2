@@ -18,25 +18,37 @@
 <body>
     <div class="container results">
         <br>
-        <div class="col-lg-3">
-            Add div to populate event names here.
+
+        <!-- Datenight Event Name to be saved in Database User-->
+        <div class="col-lg-3" id="eventName">
+            Add event names here from survey.
         </div>
         <div class="col-lg-1"></div>
+
+        <!-- Movie card: Div to display Movie info of picked by genre-->
         <div class="col-lg-6">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">movie poster here
+            <div class="card" style="width: 18rem;" id="moviePick">
+                <div id="poster"></div>
+                <img src="..." class="card-img-top" alt="..." id="moviePoster">movie poster here
                 <div class="card-body">
-                    <h5 class="card-title">Movie title</h5>
-                    <p class="card-text">Movie description here fhsfjdslkjfdls.</p>
+                    <h5 class="card-title" id="movieTitle">Movie title</h5>
+                    <p class="card-text" id="movieDesc">Movie description here fhsfjdslkjfdls.</p>
                 </div>
             </div>
             <br><br>
 
+            <!-- Restaurant card: Div to display yelp info of picked restaurant by zipcode-->
+
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">restaurant picture
+                <img src="..." class="card-img-top" alt="..." id="restImg">restaurant picture
                 <div class="card-body">
-                    <h5 class="card-title">restaurant name</h5>
-                    <p class="card-text">Phone Number - Type of food.</p>
+                    <h5 class="card-title" id="restName">restaurant name</h5>
+
+
+                    <p class="card-text"id="restPhone">Phone Number - Type of food.</p>
+                    <div id="restaurant-form">
+
+                    </div>
                 </div>
             </div>
 
@@ -48,15 +60,52 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+    integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <!-- i added more jquery here 
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+        <script src="/models/results.js"></script>
+          jQuery, linked from a CDN-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            var pathname = window.location.pathname;
+            var zipcode = pathname.substr(-5);
+            $.ajax({
+                url: "/api/yelp",
+                method: "POST",
+                data: { "userLocation": zipcode }
+            }).then(function (response) {
+                var name = response.name
+                var imageUrl = response.image_url
+                var phone = response.phone
+                $('#restName').replaceWith(`<div>${name}</div>`);
+                $('#restPhone').replaceWith(`<div>${phone}</div>`);
+                $('#restImg').attr('src', imageUrl);
+            })
+
+            $.ajax({
+                url: "/api/movie",
+                method: "POST",
+            }).then(function (response) {
+                console.log(response)
+                var movieName = response.title
+                var description = response.tagline
+                var url = response.poster_path
+                var imageUrl = 'https://image.tmdb.org/t/p/w500/' + url
+                $('#movieTitle').replaceWith(`<div>${movieName}</div>`);
+                $('#movieDesc').replaceWith(`<div>${description}</div>`);
+                $('#moviePoster').attr('src', imageUrl);
+            })
+        })
+    </script>
 </body>
 
 </html>
