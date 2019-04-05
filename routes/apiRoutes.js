@@ -1,24 +1,61 @@
 var db = require("../models");
-
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+var axios = require('axios')
+module.exports = function (app) {
+  app.post("/api/survey", function (req, res) {
+    console.log("submitted survey!")
+    // db.Result.create(req.body).then(function(dbResult) {
+    res.redirect('/api/result')
+    // })
+  });
+  app.get("/api/survey", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/survey.html"))
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  app.get("/api/result/:zipcode", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/results.html"))
+    
+  });
+
+
+  // Create a new User 
+  app.post("/api/signin", function (req, res) {
+    db.User.create(req.body).then(function (dbUser) {
+      res.redirect('/api/survey')
+    })
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.delete("/api/examples/:id", function (req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
       res.json(dbExample);
     });
   });
+
+  // Dylan's adds here - I moved up above last curly bracket
+  app.post("/api/yelp", function (req, res) {
+
+    axios.get("https://api.yelp.com/v3/businesses/search?location=" + req.body.userLocation, {
+      headers: { 'Authorization': "Bearer " + "fwwcFCIz5wi8JTslUMzF7CU53svp7ApM2pe-etytu_6sF32J1VEUsNUx5dVCDw4-fwINnj1wt-EifXxKlTrP4v9kHJ_RKGocD--S75IPpw4ITaM594ql2rQ5WfRVXHYx" }
+    }).then(function (response) {
+      res.json(response.data.businesses[0]);
+
+    });
+  });
+  
+  app.post("/api/movie", function (req, res) {
+    var key = 'e9d6795a563ac39e56f91d13b836dbe8'
+    var movieId = Math.round(Math.random() * 1000);
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=` + key)
+      .then(function (response) {
+        res.json(response.data);
+    });
+  });
+  
 };
+
+
+
+
+ 
+
+
