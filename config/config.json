@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "!!!MySQL123!!!",
     "database": "datenight_db",
     "host": "localhost",
     "dialect": "mysql",
