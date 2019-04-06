@@ -2,6 +2,8 @@ var db = require("../models");
 var axios = require('axios')
 var path = require('path')
 module.exports = function (app) {
+
+  
   app.post("/api/survey", function (req, res) {
     console.log("submitted survey!")
     // db.Result.create(req.body).then(function(dbResult) {
@@ -20,16 +22,16 @@ module.exports = function (app) {
 
   // Create a new User 
   app.post("/api/signin", function (req, res) {
-    db.User.create(req.body).then(function (dbUser) {
+    // db.User.create(req.body).then(function (dbUser) {
       res.redirect('/api/survey')
-    })
+    // })
   });
 
   // Delete an example by id
   app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
+    // db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
       res.json(dbExample);
-    });
+    // });
   });
 
   // Dylan's adds here - I moved up above last curly bracket
