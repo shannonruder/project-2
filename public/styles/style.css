@@ -151,11 +151,12 @@ button:hover {
     opacity: 1;
 }
 
+/* Results Page */
 .results {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../images/surveybg.jpg");
+    background-image: url("../images/resultbg.jpg");
     height: 100%;
     width: 100%;
     position: relative;
@@ -165,12 +166,18 @@ button:hover {
     background-size: 100% 100%;
 }
 
-.col-lg-3{
+
+.col-lg-3,
+.col-lg-6 {
     background-color:white;
+    opacity: 0.8;
 }
 
-.col-lg-6 {
+.col-lg-6:hover {
+    opacity: 1;
+}
 
-    background-color:white;
+.col-lg-3:hover {
+    opacity: 1;
 }
 
