@@ -1,9 +1,18 @@
+
+
+/********** Main Structure **********/
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: lighter;
     line-height: 25.6px;
     color: #22171F;
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 * {
@@ -135,7 +144,7 @@ button:hover {
     width: 50%;
     background-color: white;
     opacity: 0.65;
-    color: black
+    color: black;
 }
 
 .survey:hover {
@@ -164,3 +173,4 @@ button:hover {
 
     background-color:white;
 }
+

@@ -40,13 +40,14 @@ module.exports = function (app) {
     axios.get("https://api.yelp.com/v3/businesses/search?location=" + req.body.userLocation, {
       headers: { 'Authorization': "Bearer " + "fwwcFCIz5wi8JTslUMzF7CU53svp7ApM2pe-etytu_6sF32J1VEUsNUx5dVCDw4-fwINnj1wt-EifXxKlTrP4v9kHJ_RKGocD--S75IPpw4ITaM594ql2rQ5WfRVXHYx" }
     }).then(function (response) {
+      console.log(response.data);
       res.json(response.data.businesses[0]);
 
     });
   });
   
   app.post("/api/movie", function (req, res) {
-    var key = 'e9d6795a563ac39e56f91d13b836dbe8'
+    var key = 'ecd271091a78c85cce1ead8c535b9916'
     var movieId = Math.round(Math.random() * 1000);
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=` + key)
       .then(function (response) {
