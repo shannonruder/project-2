@@ -27,8 +27,9 @@
 
         <!-- Movie card: Div to display Movie info of picked by genre-->
         <div class="col-lg-6">
-            <br><br>
-            <h3>Here to a great night!</h3>
+            <br>
+            <h3>Your Food n Flix Night!</h3>
+            <br>
             <div class="card w-50" id="moviePick">
                 <div id="poster"></div>
                 <img class="card-img-top" id="moviePoster" width="200" height="250">
@@ -41,14 +42,14 @@
 
             <!-- Restaurant card: Div to display yelp info of picked restaurant by zipcode-->
 
-            <div class="card w-50">
+            <div class="card w-50 text-center">
                 <img class="card-img-top" id="restImg" width="200" height="250">
                 <div class="card-body">
                     <h5 class="card-title" id="restName">restaurant name</h5>
 
 
                     <p class="card-text"id="restPhone">Phone Number - Type of food.</p>
-                    <p class=“card-text”id=“restBtn”>Restaurant link to yelp.</p>
+                    <p class="card-text"id="restBtn">Restaurant link to yelp.</p>
                     <div id="restaurant-form">
 
                     </div>
@@ -90,8 +91,11 @@
                 var name = response.name
                 var imageUrl = response.image_url
                 var phone = response.phone
+                var button = response.url
                 $('#restName').replaceWith(`<div>${name}</div>`);
                 $('#restPhone').replaceWith(`<div>${phone}</div>`);
+                // $("#restBtn").replaceWith(`<button onclick="window.location.href='${button}'"target = "_blank">more info</button>`);
+                $("#restBtn").replaceWith(`<button onclick="window.open('${button}', '_blank')">more info</button>`);
                 $('#restImg').attr('src', imageUrl);
             })
 
