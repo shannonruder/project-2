@@ -46,6 +46,7 @@
 
 
                     <p class="card-text"id="restPhone">Phone Number - Type of food.</p>
+                    <p class="card-text"id="restBtn">Restaurant link to yelp.</p>
                     <div id="restaurant-form">
 
                     </div>
@@ -86,8 +87,11 @@
                 var name = response.name
                 var imageUrl = response.image_url
                 var phone = response.phone
+                var button = response.url
                 $('#restName').replaceWith(`<div>${name}</div>`);
                 $('#restPhone').replaceWith(`<div>${phone}</div>`);
+                // $("#restBtn").replaceWith(`<button onclick="window.location.href='${button}'"target = "_blank">more info</button>`);
+                $("#restBtn").replaceWith(`<button onclick="window.open('${button}', '_blank')">more info</button>`);
                 $('#restImg').attr('src', imageUrl);
             })
 

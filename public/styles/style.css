@@ -119,6 +119,7 @@ button:hover {
     border-radius: 0 10px 0 10px;
 }
 
+
 #cancelbtn {
     background-color: #F3B85D;
 }
@@ -174,3 +175,24 @@ button:hover {
     background-color:white;
 }
 
+restButton {
+    font-size: 6px;
+    color: white;
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px 0 10px 0;
+    background-color: #FF6D77;
+    border: none;
+}
+
+restButton:hover {
+    background-color: #37401E;
+    border-radius: 0 10px 0 10px;
+}
+
+
+input {
+
+min-width: 400px;
+}
