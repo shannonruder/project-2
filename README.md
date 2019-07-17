@@ -1,9 +1,6 @@
 # Food n Flix
 
-An app created to help alleviate the need for indecision surrounding what movie to pick and what food to order in for a special evening with friends or family at home.
-
-
-<p>So many movie options, so many food options out there with so little time to sift through the choices! We all lead hectic lives. FoodnFlix is an event planner app that provides users with a shortcut to pairing a movie with a nearby restaurant. We do this by getting to know our users and their preferences.</p>
+An app created to help alleviate the need for indecision surrounding what movie to pick and what food to order in for a special evening with friends or family at home. FoodnFlix is an event planner app that provides users with a shortcut to pairing a movie with a nearby restaurant. We do this by getting to know our users and their preferences.</p>
 
 
 
@@ -23,7 +20,6 @@ An app created to help alleviate the need for indecision surrounding what movie 
 ## Authors
 
 * **Hillwood Chan** - [LinkedIn](https://github.com/hillwoodc)
-* **Dylan Rios** - [LinkedIn](https://github.com/dylanrios)
 * **Shannon Ruder** - [LinkedIn](https://linkedin.com/in/shannon-ruder-09a921/)
 * **Jennifer Vo** - [LinkedIn](https://github.com/Unikwalk)
 
